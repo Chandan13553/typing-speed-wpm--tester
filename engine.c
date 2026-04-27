@@ -131,19 +131,20 @@ int wpmCalculator(char words[][20], int wordCount){
                 }
                 numCharTillPrevLine = 0;
             }
-            else{ // showing the user entered character in real time
-                printf("%c", userChar);
-                numTtlCharWrtn ++;
+           else{
                 if (userChar == paragraph[numTtlCharWrtn])
                     printf(GREEN "%c" RESET, userChar);
                 else
                     printf(RED "%c" RESET, userChar);
+
+                numTtlCharWrtn++;
+
                 if (numTtlCharWrtn == numCharInCurrLine){
-                    line ++; // going to the next line
-                    numCharInCurrLine += numCharPLine[line]; 
+                    line++;
+                    numCharInCurrLine += numCharPLine[line];
                     printf("\n   ");
-                } 
-            } 
+                }
+            }
         } 
     } 
     return 0; 
